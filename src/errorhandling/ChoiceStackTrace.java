@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 
 /**
  * @author Phillipp Ohl
- *
+ * @version 0.1
  */
 public class ChoiceStackTrace {
 	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

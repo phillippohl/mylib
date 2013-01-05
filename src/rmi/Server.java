@@ -10,7 +10,7 @@ import java.rmi.registry.Registry;
 
 /**
  * @author Phillipp Ohl
- *
+ * @version 0.1
  */
 public class Server {
 	private static Registry registry;

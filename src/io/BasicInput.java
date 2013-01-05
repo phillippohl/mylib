@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 
 /**
  * @author Phillipp Ohl
- *
+ * @version 0.1
  */
 public class BasicInput {
 
@@ -18,18 +18,33 @@ public class BasicInput {
 	 */
 	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	
+	/**
+	 * @param message The message, which is supposed to be printed to the command line 
+	 * in order to guide the user's input
+	 * @return Method returns the user's input casted as String
+	 */
 	public static String getStringInput(String message) throws IOException{
 		System.out.println(message);
 		String result = br.readLine();
 		return result;
 	}
 	
+	/**
+	 * @param message The message, which is supposed to be printed to the command line 
+	 * in order to guide the user's input
+	 * @return Method returns the user's input casted as character
+	 */
 	public static char getCharacterInput(String message) throws IOException{
 		System.out.println(message);
 		char result = (char) br.read();	
 		return result;
 	}
 	
+	/**
+	 * @param message The message, which is supposed to be printed to the command line 
+	 * in order to guide the user's input
+	 * @return Method returns the user's input casted as byte
+	 */
 	public static double getByteInput(String message) throws IOException{
 		System.out.println(message);
 		String resultStr = br.readLine();
@@ -37,6 +52,11 @@ public class BasicInput {
 		return result;
 	}
 	
+	/**
+	 * @param message The message, which is supposed to be printed to the command line 
+	 * in order to guide the user's input
+	 * @return Method returns the user's input casted as short
+	 */
 	public static double getShortInput(String message) throws IOException{
 		System.out.println(message);
 		String resultStr = br.readLine();
@@ -44,6 +64,11 @@ public class BasicInput {
 		return result;
 	}
 	
+	/**
+	 * @param message The message, which is supposed to be printed to the command line 
+	 * in order to guide the user's input
+	 * @return Method returns the user's input casted as integer
+	 */
 	public static double getIntegerInput(String message) throws IOException{
 		System.out.println(message);
 		String resultStr = br.readLine();
@@ -51,6 +76,11 @@ public class BasicInput {
 		return result;
 	}
 	
+	/**
+	 * @param message The message, which is supposed to be printed to the command line 
+	 * in order to guide the user's input
+	 * @return Method returns the user's input casted as long
+	 */
 	public static double getLongInput(String message) throws IOException{
 		System.out.println(message);
 		String resultStr = br.readLine();
@@ -58,6 +88,11 @@ public class BasicInput {
 		return result;
 	}
 	
+	/**
+	 * @param message The message, which is supposed to be printed to the command line 
+	 * in order to guide the user's input
+	 * @return Method returns the user's input casted as float
+	 */
 	public static double getFloatInput(String message) throws IOException{
 		System.out.println(message);
 		String resultStr = br.readLine();
@@ -65,6 +100,11 @@ public class BasicInput {
 		return result;
 	}
 	
+	/**
+	 * @param message The message, which is supposed to be printed to the command line 
+	 * in order to guide the user's input
+	 * @return Method returns the user's input casted as double
+	 */
 	public static double getDoubleInput(String message) throws IOException{
 		System.out.println(message);
 		String resultStr = br.readLine();
