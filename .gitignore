@@ -1,6 +1,19 @@
+# Directories to ignore #
+/bin
+/lib
+/.settings
+
+# Java specific #
 *.class
 
-# Package Files #
+# Package files to ignore #
 *.jar
 *.war
 *.ear
+
+# Generic files to ignore #
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
