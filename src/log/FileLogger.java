@@ -98,6 +98,7 @@ public class FileLogger {
 	 */
 	private String getTimeStamp(){
 		String timeStamp = "";
+		timeStamp = "[" + this.calendar.get(Calendar.HOUR_OF_DAY) + ":" + this.calendar.get(Calendar.MINUTE) + ":" + this.calendar.get(Calendar.SECOND) + "]";
 		return timeStamp;
 	}
 	/**
