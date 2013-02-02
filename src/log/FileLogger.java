@@ -13,7 +13,7 @@ import java.util.Calendar;
 
 /**
  * @author phillippohl
- * @version 0.4
+ * @version 0.5
  */
 public class FileLogger {	
 	private String FILENAME			= null;
@@ -25,17 +25,23 @@ public class FileLogger {
 	 * Default constructor
 	 */
 	public FileLogger() {
-		this.calendar = Calendar.getInstance();
-		this.FILENAME = "logfile_" + this.calendar.get(Calendar.YEAR) + "_" + (this.calendar.get(Calendar.MONTH) + 1) + "_" + this.calendar.get(Calendar.DAY_OF_MONTH) + ".log";
-		this.log = new File(FILENAME);
+		this.createFile("logfile");
 	}
 	/**
-	 * @param filename if provided, the filename for the log file
+	 * @param filename for the log file
 	 */
 	public FileLogger(String filename) {
+		this.createFile(filename);
+	}
+	/**
+	 * @param filename for the log file
+	 * @return name of created file
+	 */
+	private String createFile(String filename){
 		this.calendar = Calendar.getInstance();
 		this.FILENAME = filename + "_" + this.calendar.get(Calendar.YEAR) + "_" + (this.calendar.get(Calendar.MONTH) + 1) + "_" + this.calendar.get(Calendar.DAY_OF_MONTH) + ".log";
 		this.log = new File(FILENAME);
+		return this.FILENAME;
 	}
 	/**
 	 * @return current entries from log file
