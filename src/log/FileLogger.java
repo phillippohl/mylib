@@ -16,16 +16,17 @@ import java.util.Calendar;
  * @version 0.5
  */
 public class FileLogger {	
-	private String FILENAME			= null;
-	private File log				= null;
-	private BufferedReader br		= null;
-	private PrintWriter pw			= null;
-	private Calendar calendar		= null;
+	private String filename							= null;
+	private final static String DEFAULT_FILENAME	= "logfile";
+	private File log								= null;
+	private BufferedReader br						= null;
+	private PrintWriter pw							= null;
+	private Calendar calendar						= null;
 	/**
 	 * Default constructor
 	 */
 	public FileLogger() {
-		this.createFile("logfile");
+		this.createFile(DEFAULT_FILENAME);
 	}
 	/**
 	 * @param filename for the log file
@@ -39,18 +40,18 @@ public class FileLogger {
 	 */
 	private String createFile(String filename){
 		this.calendar = Calendar.getInstance();
-		this.FILENAME = filename + "_" + this.calendar.get(Calendar.YEAR) + "_" + (this.calendar.get(Calendar.MONTH) + 1) + "_" + this.calendar.get(Calendar.DAY_OF_MONTH) + ".log";
-		this.log = new File(FILENAME);
-		return this.FILENAME;
+		this.filename = filename + "_" + this.calendar.get(Calendar.YEAR) + "_" + (this.calendar.get(Calendar.MONTH) + 1) + "_" + this.calendar.get(Calendar.DAY_OF_MONTH) + ".log";
+		this.log = new File(this.filename);
+		return this.filename;
 	}
 	/**
 	 * @return current entries from log file
 	 */
 	private String readFromLog() {
 		String input = "";
-		System.out.println("Reading from " + FILENAME + "...");
+		System.out.println("Reading from " + this.filename + "...");
 		try {
-			this.br = new BufferedReader(new FileReader(this.FILENAME));
+			this.br = new BufferedReader(new FileReader(this.filename));
 			while(this.br.ready()){
 				input += this.br.readLine() + '\n';
 			}
@@ -70,7 +71,7 @@ public class FileLogger {
 		if(log.exists()){
 			input = this.readFromLog();
 		}		
-		System.out.println("Writing to " + FILENAME + "...");
+		System.out.println("Writing to " + this.filename + "...");
 		try {
 			this.pw = new PrintWriter(new FileWriter(this.log));
 			this.pw.print(input);
@@ -84,28 +85,36 @@ public class FileLogger {
 		System.out.println("Writing finished...");
 		return 1;
 	}
-	
+	/**
+	 * @param message to write into the log file
+	 * @param category that message belongs to
+	 */
 	public void writeToLog(String message, int category) {
 		message = this.addCategory(category) + " " + message;
 		this.writeToLog(message);
 	}
-	
+	/**
+	 * @return current time stamp
+	 */
 	private String getTimeStamp(){
 		String timeStamp = "";
 		return timeStamp;
 	}
-	
+	/**
+	 * @param categoryNumber to specify the message's category
+	 * @return derived category from specified number
+	 */
 	private String addCategory(int categoryNumber){
 		String category = "";
 		switch(categoryNumber){
 		case 0:
-			category = "INFO";
+			category = LogCategory.INFO;
 			break;
 		case 1:
-			category = "ERROR";
+			category = LogCategory.ERROR;
 			break;
 		default:
-			category = "Unkwnown catrgory!";
+			category = LogCategory.UNKNOWN;
 			break;
 		}
 		return category;
