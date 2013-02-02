@@ -74,7 +74,7 @@ public class FileLogger {
 		try {
 			this.pw = new PrintWriter(new FileWriter(this.log));
 			this.pw.print(input);
-			this.pw.print(message);
+			this.pw.print(getTimeStamp() + " " + message);
 			this.pw.flush();
 			this.pw.close();
 		} catch (IOException ioe) {
@@ -83,5 +83,31 @@ public class FileLogger {
 		}
 		System.out.println("Writing finished...");
 		return 1;
+	}
+	
+	public void writeToLog(String message, int category) {
+		message = this.addCategory(category) + " " + message;
+		this.writeToLog(message);
+	}
+	
+	private String getTimeStamp(){
+		String timeStamp = "";
+		return timeStamp;
+	}
+	
+	private String addCategory(int categoryNumber){
+		String category = "";
+		switch(categoryNumber){
+		case 0:
+			category = "INFO";
+			break;
+		case 1:
+			category = "ERROR";
+			break;
+		default:
+			category = "Unkwnown catrgory!";
+			break;
+		}
+		return category;
 	}
 }
