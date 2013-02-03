@@ -13,15 +13,15 @@ import java.util.Calendar;
 
 /**
  * @author phillippohl
- * @version 0.5
+ * @version 0.6
  */
 public class FileLogger {	
-	private String filename							= null;
-	private final static String DEFAULT_FILENAME	= "logfile";
-	private File log								= null;
-	private BufferedReader br						= null;
-	private PrintWriter pw							= null;
-	private Calendar calendar						= null;
+	protected String filename						= null;
+	protected final static String DEFAULT_FILENAME	= "logfile";
+	protected File log								= null;
+	protected BufferedReader br						= null;
+	protected PrintWriter pw						= null;
+	protected Calendar calendar						= null;
 	/**
 	 * Default constructor
 	 */
@@ -38,7 +38,7 @@ public class FileLogger {
 	 * @param filename for the log file
 	 * @return name of created file
 	 */
-	private String createFile(String filename){
+	protected String createFile(String filename){
 		this.calendar = Calendar.getInstance();
 		this.filename = filename + "_" + this.calendar.get(Calendar.YEAR) + "_" + (this.calendar.get(Calendar.MONTH) + 1) + "_" + this.calendar.get(Calendar.DAY_OF_MONTH) + ".log";
 		this.log = new File(this.filename);
@@ -47,7 +47,7 @@ public class FileLogger {
 	/**
 	 * @return current entries from log file
 	 */
-	private String readFromLog() {
+	protected String readFromLog() {
 		String input = "";
 		System.out.println("Reading from " + this.filename + "...");
 		try {
@@ -96,7 +96,7 @@ public class FileLogger {
 	/**
 	 * @return current time stamp
 	 */
-	private String getTimeStamp(){
+	protected String getTimeStamp(){
 		String timeStamp = "";
 		timeStamp = "[" + this.calendar.get(Calendar.HOUR_OF_DAY) + ":" + this.calendar.get(Calendar.MINUTE) + ":" + this.calendar.get(Calendar.SECOND) + "]";
 		return timeStamp;
@@ -105,7 +105,7 @@ public class FileLogger {
 	 * @param categoryNumber to specify the message's category
 	 * @return derived category from specified number
 	 */
-	private String addCategory(int categoryNumber){
+	protected String addCategory(int categoryNumber){
 		String category = "";
 		switch(categoryNumber){
 		case 0:
