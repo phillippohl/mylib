@@ -10,14 +10,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Calendar;
-
 /**
  * @author phillippohl
  * @version 0.6
  */
 public class FileLogger {	
+	protected final static String DEFAULT_FILENAME	= "file";
 	protected String filename						= null;
-	protected final static String DEFAULT_FILENAME	= "logfile";
 	protected File log								= null;
 	protected BufferedReader br						= null;
 	protected PrintWriter pw						= null;
@@ -109,13 +108,13 @@ public class FileLogger {
 		String category = "";
 		switch(categoryNumber){
 		case 0:
-			category = LogCategory.INFO;
+			category = "INFO";
 			break;
 		case 1:
-			category = LogCategory.ERROR;
+			category = "ERROR";
 			break;
 		default:
-			category = LogCategory.UNKNOWN;
+			category = "UNKNOWN";
 			break;
 		}
 		return category;

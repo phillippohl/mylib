@@ -5,10 +5,10 @@ package log;
 
 /**
  * @author phillippohl
- * @version 0.1
+ * @version 0.2
  */
 public class LogCategory {
-	protected final static String INFO = "INFO";
-	protected final static String ERROR = "ERROR";
-	protected final static String UNKNOWN = "Unkwnown category!";
+	protected final static int INFO = 0;
+	protected final static int ERROR = 1;
+	protected final static int UNKNOWN = 2;
 }
