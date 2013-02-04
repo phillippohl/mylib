@@ -1,7 +1,7 @@
 /**
  * 
  */
-package errorhandling;
+package error;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 
 /**
  * @author Phillipp Ohl
- * @version 0.1
+ * @version 0.3
  */
 public class ChoiceStackTrace {
 	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

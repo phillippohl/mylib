@@ -4,7 +4,7 @@
 package log;
 
 /**
- * @author phillippohl
+ * @author Phillipp Ohl
  * @version 0.2
  */
 public class LogCategory {

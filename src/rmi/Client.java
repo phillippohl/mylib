@@ -6,7 +6,7 @@ package rmi;
 import java.rmi.RMISecurityManager;
 
 /**
- * @author Phillipp
+ * @author Phillipp Ohl
  * @version 0.1
  */
 public class Client {

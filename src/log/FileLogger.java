@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Calendar;
 /**
- * @author phillippohl
+ * @author Phillipp Ohl
  * @version 0.6
  */
 public class FileLogger {	
@@ -56,7 +56,7 @@ public class FileLogger {
 			}
 			this.br.close();
 		} catch (IOException ioe) {
-			errorhandling.ChoiceStackTrace.EnableStackTrace(ioe, "Error wtihin in-/output");
+			error.ChoiceStackTrace.EnableStackTrace(ioe, "Error wtihin in-/output");
 		}
 		System.out.println("Reading finished...");
 		return input;
@@ -78,7 +78,7 @@ public class FileLogger {
 			this.pw.flush();
 			this.pw.close();
 		} catch (IOException ioe) {
-			errorhandling.ChoiceStackTrace.EnableStackTrace(ioe, "Error wtihin in-/output");
+			error.ChoiceStackTrace.EnableStackTrace(ioe, "Error wtihin in-/output");
 			return -1;
 		}
 		System.out.println("Writing finished...");
