@@ -64,7 +64,7 @@ public class FileLogger {
 	}
 	/**
 	 * @param message to write into the log file
-	 * @return check value if operation executed successfully (1) or not (-1)
+	 * @return check value if operation was executed successfully (1) or not (-1)
 	 */
 	public int writeToLog(String message) {
 		String input = "";
