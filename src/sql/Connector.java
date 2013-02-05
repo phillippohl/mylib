@@ -3,17 +3,19 @@
  */
 package sql;
 
+import log.FileLogger;
+
 /**
  * @author Phillipp Ohl
  * @version 0.1
  */
 public class Connector implements SqlConnector {
-
+	private FileLogger log			= null;
 	/**
 	 * Default constructor
 	 */
 	public Connector() {
-		// TODO Auto-generated constructor stub
+		this.log = new FileLogger();
 	}
 	/**
 	 * @param query that is supposed to be executed
